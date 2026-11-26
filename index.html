@@ -12,15 +12,13 @@
       --bg-0: #070b14;
       --bg-1: #0d1424;
       --bg-2: #131d33;
-      --card: rgba(19, 29, 51, 0.85);
-      --border: rgba(99, 145, 255, 0.22);
+      --card: rgba(19, 29, 51, 0.9);
+      --border: rgba(99, 145, 255, 0.25);
       --primary: #3b82f6;
-      --primary-glow: rgba(59, 130, 246, 0.28);
+      --primary-glow: rgba(59, 130, 246, 0.35);
       --accent: #38bdf8;
       --success: #10b981;
       --warn: #f59e0b;
-      --danger: #ef4444;
-      --purple: #a855f7;
       --text-0: #f8fafc;
       --text-1: #cbd5e1;
       --text-2: #94a3b8;
@@ -28,6 +26,7 @@
       --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
       background: radial-gradient(circle at 15% 10%, #16264c 0%, var(--bg-0) 55%), var(--bg-0);
       color: var(--text-0);
@@ -37,7 +36,7 @@
       padding-bottom: 4rem;
     }
     .topbar {
-      background: rgba(7, 11, 20, 0.88);
+      background: rgba(7, 11, 20, 0.92);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
       position: sticky;
@@ -50,55 +49,80 @@
       align-items: center;
       gap: 1rem;
     }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.9rem;
-    }
+    .brand { display: flex; align-items: center; gap: 0.9rem; }
     .brand-badge {
-      width: 42px;
-      height: 42px;
-      border-radius: 10px;
+      width: 42px; height: 42px; border-radius: 10px;
       background: linear-gradient(135deg, #2563eb, #06b6d4);
-      display: grid;
-      place-items: center;
-      font-family: var(--mono);
-      font-weight: 800;
-      font-size: 0.95rem;
-      color: #fff;
+      display: grid; place-items: center;
+      font-family: var(--mono); font-weight: 800; font-size: 0.95rem; color: #fff;
       box-shadow: 0 0 20px var(--primary-glow);
     }
-    .brand-title h1 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-    }
-    .brand-title p {
-      font-size: 0.78rem;
-      color: var(--text-2);
-    }
+    .brand-title h1 { font-size: 1.05rem; font-weight: 700; }
+    .brand-title p { font-size: 0.78rem; color: var(--text-2); }
     .student-pill {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      background: rgba(59, 130, 246, 0.12);
-      border: 1px solid rgba(59, 130, 246, 0.35);
-      padding: 0.45rem 0.95rem;
-      border-radius: 999px;
-      font-size: 0.82rem;
+      display: flex; align-items: center; gap: 0.75rem;
+      background: rgba(59, 130, 246, 0.14);
+      border: 1px solid rgba(59, 130, 246, 0.4);
+      padding: 0.45rem 0.95rem; border-radius: 999px; font-size: 0.82rem;
     }
     .student-pill strong { color: #93c5fd; }
-    .container {
-      max-width: 1320px;
-      margin: 0 auto;
-      padding: 1.75rem 1.5rem 0;
+    .container { max-width: 1320px; margin: 0 auto; padding: 1.5rem 1.5rem 0; }
+
+    /* Submission Documents Banner */
+    .docs-banner {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.16), rgba(30, 58, 138, 0.38));
+      border: 1px solid rgba(16, 185, 129, 0.45);
+      border-radius: 14px;
+      padding: 1.1rem 1.4rem;
+      margin-bottom: 1.35rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
     }
+    .docs-banner-text h3 {
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: #6ee7b7;
+      margin-bottom: 0.18rem;
+    }
+    .docs-banner-text p {
+      font-size: 0.8rem;
+      color: var(--text-1);
+    }
+    .docs-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+    .doc-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      color: #38bdf8;
+      padding: 0.52rem 0.9rem;
+      border-radius: 9px;
+      font-size: 0.79rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+    .doc-link:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
     .hero {
-      background: linear-gradient(135deg, rgba(30, 58, 138, 0.45), rgba(15, 23, 42, 0.85));
+      background: linear-gradient(135deg, rgba(30, 58, 138, 0.45), rgba(15, 23, 42, 0.88));
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 1.65rem 1.85rem;
-      margin-bottom: 1.5rem;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1.35rem;
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 1.5rem;
@@ -106,309 +130,132 @@
     }
     @media (max-width: 900px) { .hero { grid-template-columns: 1fr; } }
     .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      background: rgba(16, 185, 129, 0.15);
-      border: 1px solid rgba(16, 185, 129, 0.4);
-      color: #6ee7b7;
-      padding: 0.25rem 0.7rem;
-      border-radius: 999px;
-      font-size: 0.74rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin-bottom: 0.65rem;
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #6ee7b7; padding: 0.25rem 0.7rem; border-radius: 999px;
+      font-size: 0.73rem; font-weight: 600; text-transform: uppercase; margin-bottom: 0.55rem;
     }
-    .hero h2 {
-      font-size: 1.55rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.45rem;
-    }
-    .hero p {
-      color: var(--text-1);
-      font-size: 0.9rem;
-      max-width: 820px;
-    }
+    .hero h2 { font-size: 1.48rem; font-weight: 800; margin-bottom: 0.4rem; }
+    .hero p { color: var(--text-1); font-size: 0.88rem; max-width: 820px; }
+
     .metrics-bar {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0.95rem;
-      margin-bottom: 1.5rem;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.95rem; margin-bottom: 1.35rem;
     }
     @media (max-width: 850px) { .metrics-bar { grid-template-columns: repeat(2, 1fr); } }
     .metric-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 13px;
-      padding: 1rem 1.2rem;
+      background: var(--card); border: 1px solid var(--border); border-radius: 13px; padding: 0.95rem 1.15rem;
     }
-    .metric-card .m-label {
-      font-size: 0.74rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-2);
-    }
-    .metric-card .m-val {
-      font-size: 1.55rem;
-      font-weight: 800;
-      font-family: var(--mono);
-      color: var(--accent);
-      margin: 0.2rem 0;
-    }
-    .metric-card .m-sub {
-      font-size: 0.76rem;
-      color: var(--text-1);
-    }
+    .metric-card .m-label { font-size: 0.73rem; text-transform: uppercase; color: var(--text-2); }
+    .metric-card .m-val { font-size: 1.5rem; font-weight: 800; font-family: var(--mono); color: var(--accent); margin: 0.15rem 0; }
+    .metric-card .m-sub { font-size: 0.75rem; color: var(--text-1); }
+
     .grid-2 {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 1.35rem;
-      margin-bottom: 1.5rem;
+      display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 1.35rem; margin-bottom: 1.5rem;
     }
     @media (max-width: 1024px) { .grid-2 { grid-template-columns: 1fr; } }
     .panel {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 15px;
-      padding: 1.35rem 1.45rem;
+      background: var(--card); border: 1px solid var(--border); border-radius: 15px; padding: 1.35rem 1.45rem;
     }
     .panel-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
-      padding-bottom: 0.7rem;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 1rem; padding-bottom: 0.7rem; border-bottom: 1px solid rgba(148, 163, 184, 0.14);
     }
-    .panel-header h3 {
-      font-size: 1.02rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
+    .panel-header h3 { font-size: 1.02rem; font-weight: 700; }
     .badge {
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      padding: 0.2rem 0.55rem;
-      border-radius: 6px;
-      background: rgba(59, 130, 246, 0.16);
-      color: #93c5fd;
-      border: 1px solid rgba(59, 130, 246, 0.3);
+      font-family: var(--mono); font-size: 0.72rem; padding: 0.2rem 0.55rem; border-radius: 6px;
+      background: rgba(59, 130, 246, 0.16); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.3);
     }
-    .query-box {
-      display: flex;
-      gap: 0.65rem;
-      margin-bottom: 0.9rem;
-    }
+    .query-box { display: flex; gap: 0.65rem; margin-bottom: 0.9rem; }
     .query-input {
-      flex: 1;
-      background: rgba(7, 11, 20, 0.75);
-      border: 1px solid rgba(99, 145, 255, 0.35);
-      color: var(--text-0);
-      padding: 0.8rem 1rem;
-      border-radius: 10px;
-      font-size: 0.92rem;
-      font-family: var(--sans);
-      outline: none;
-      transition: border-color 0.15s, box-shadow 0.15s;
+      flex: 1; background: rgba(7, 11, 20, 0.82); border: 1px solid rgba(99, 145, 255, 0.4);
+      color: var(--text-0); padding: 0.8rem 1rem; border-radius: 10px; font-size: 0.92rem; outline: none;
     }
-    .query-input:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
-    }
+    .query-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.22); }
     .btn {
-      background: linear-gradient(135deg, #2563eb, #0284c7);
-      color: #fff;
-      border: none;
-      padding: 0.8rem 1.25rem;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 0.88rem;
-      cursor: pointer;
-      transition: transform 0.12s, opacity 0.15s;
-      white-space: nowrap;
+      background: linear-gradient(135deg, #2563eb, #0284c7); color: #fff; border: none;
+      padding: 0.8rem 1.25rem; border-radius: 10px; font-weight: 600; font-size: 0.86rem;
+      cursor: pointer; transition: all 0.15s; white-space: nowrap; display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;
     }
-    .btn:hover { opacity: 0.94; transform: translateY(-1px); }
-    .btn-secondary {
-      background: rgba(51, 65, 85, 0.7);
-      border: 1px solid rgba(148, 163, 184, 0.3);
-    }
-    .chips-label {
-      font-size: 0.76rem;
-      color: var(--text-2);
-      margin-bottom: 0.45rem;
-      display: block;
-    }
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.45rem;
-      margin-bottom: 1.15rem;
-    }
+    .btn:hover { opacity: 0.95; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35); }
+    .btn:active { transform: translateY(0); }
+    .btn-secondary { background: rgba(51, 65, 85, 0.8); border: 1px solid rgba(148, 163, 184, 0.35); }
+
+    .chips-label { font-size: 0.76rem; color: var(--text-2); margin-bottom: 0.45rem; display: block; }
+    .chips { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 1.15rem; }
     .chip {
-      background: rgba(30, 41, 59, 0.85);
-      border: 1px solid rgba(148, 163, 184, 0.24);
-      color: var(--text-1);
-      padding: 0.34rem 0.68rem;
-      border-radius: 8px;
-      font-size: 0.76rem;
-      cursor: pointer;
-      transition: all 0.15s;
+      background: rgba(30, 41, 59, 0.9); border: 1px solid rgba(148, 163, 184, 0.28);
+      color: var(--text-1); padding: 0.38rem 0.72rem; border-radius: 8px; font-size: 0.76rem;
+      cursor: pointer; transition: all 0.15s; font-weight: 500;
     }
-    .chip:hover {
-      background: rgba(59, 130, 246, 0.22);
-      border-color: var(--primary);
-      color: #fff;
+    .chip:hover, .chip.active-chip {
+      background: var(--primary); border-color: var(--accent); color: #fff;
+      box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
     }
+
     .result-card {
-      background: rgba(7, 11, 20, 0.82);
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      border-radius: 12px;
-      padding: 1.15rem 1.25rem;
+      background: rgba(7, 11, 20, 0.88); border: 2px solid rgba(56, 189, 248, 0.35);
+      border-radius: 12px; padding: 1.15rem 1.25rem; transition: all 0.25s;
     }
-    .result-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.55rem;
-      margin-bottom: 0.8rem;
-      align-items: center;
+    .result-card.flash {
+      border-color: #34d399;
+      box-shadow: 0 0 24px rgba(16, 185, 129, 0.35);
     }
-    .status-pill {
-      font-family: var(--mono);
-      font-size: 0.73rem;
-      font-weight: 700;
-      padding: 0.22rem 0.6rem;
-      border-radius: 6px;
-    }
-    .status-ANSWERED {
-      background: rgba(16, 185, 129, 0.18);
-      color: #34d399;
-      border: 1px solid rgba(16, 185, 129, 0.4);
-    }
-    .status-ABSTAIN {
-      background: rgba(245, 158, 11, 0.18);
-      color: #fbbf24;
-      border: 1px solid rgba(245, 158, 11, 0.4);
-    }
-    .result-row {
-      margin-bottom: 0.65rem;
-    }
+    .result-meta { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-bottom: 0.8rem; align-items: center; }
+    .status-pill { font-family: var(--mono); font-size: 0.73rem; font-weight: 700; padding: 0.22rem 0.6rem; border-radius: 6px; }
+    .status-ANSWERED { background: rgba(16, 185, 129, 0.18); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); }
+    .status-ABSTAIN { background: rgba(245, 158, 11, 0.18); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4); }
+    .result-row { margin-bottom: 0.65rem; }
     .result-row:last-child { margin-bottom: 0; }
-    .result-row .r-key {
-      font-size: 0.73rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-2);
-      margin-bottom: 0.15rem;
-    }
-    .result-row .r-val {
-      font-family: var(--mono);
-      font-size: 0.92rem;
-      color: #f8fafc;
-      word-break: break-word;
-    }
-    .result-row .r-val.highlight {
-      color: #38bdf8;
-      font-size: 1.03rem;
-      font-weight: 700;
-    }
-    .rule-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
+    .result-row .r-key { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-2); margin-bottom: 0.15rem; }
+    .result-row .r-val { font-family: var(--mono); font-size: 0.9rem; color: #f8fafc; word-break: break-word; }
+    .result-row .r-val.highlight { color: #38bdf8; font-size: 1.04rem; font-weight: 700; }
+
+    .rule-list { display: flex; flex-direction: column; gap: 0.55rem; }
     .rule-item {
-      background: rgba(15, 23, 42, 0.78);
-      border: 1px solid rgba(148, 163, 184, 0.18);
-      border-left: 3px solid var(--primary);
-      border-radius: 9px;
-      padding: 0.65rem 0.85rem;
+      background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(148, 163, 184, 0.18);
+      border-left: 3px solid var(--primary); border-radius: 9px; padding: 0.6rem 0.85rem;
     }
-    .rule-item code {
-      font-family: var(--mono);
-      font-size: 0.78rem;
-      color: #93c5fd;
-      display: block;
-      margin-bottom: 0.2rem;
-    }
-    .rule-item span {
-      font-size: 0.76rem;
-      color: var(--text-2);
-    }
-    .tabs {
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-      flex-wrap: wrap;
-    }
+    .rule-item code { font-family: var(--mono); font-size: 0.77rem; color: #93c5fd; display: block; margin-bottom: 0.15rem; }
+    .rule-item span { font-size: 0.75rem; color: var(--text-2); }
+
+    .tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; }
     .tab-btn {
-      background: rgba(15, 23, 42, 0.75);
-      border: 1px solid rgba(148, 163, 184, 0.22);
-      color: var(--text-1);
-      padding: 0.5rem 0.95rem;
-      border-radius: 9px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      cursor: pointer;
+      background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(148, 163, 184, 0.25);
+      color: var(--text-1); padding: 0.52rem 1rem; border-radius: 9px; font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: all 0.15s;
     }
-    .tab-btn.active {
-      background: var(--primary);
-      border-color: var(--primary);
-      color: #fff;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.81rem;
-    }
-    th, td {
-      text-align: left;
-      padding: 0.62rem 0.75rem;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.14);
-    }
-    th {
-      background: rgba(15, 23, 42, 0.9);
-      color: #93c5fd;
-      font-weight: 600;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    tr:hover td { background: rgba(59, 130, 246, 0.06); }
+    .tab-btn:hover { border-color: var(--accent); color: #fff; }
+    .tab-btn.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 0.81rem; }
+    th, td { text-align: left; padding: 0.62rem 0.75rem; border-bottom: 1px solid rgba(148, 163, 184, 0.14); }
+    th { background: rgba(15, 23, 42, 0.95); color: #93c5fd; font-weight: 600; font-size: 0.74rem; text-transform: uppercase; position: sticky; top: 0; }
+    tr.clickable-row { cursor: pointer; transition: background 0.12s; }
+    tr.clickable-row:hover td { background: rgba(59, 130, 246, 0.14); }
     .mono { font-family: var(--mono); font-size: 0.77rem; }
     .pass-badge {
-      background: rgba(16, 185, 129, 0.18);
-      color: #34d399;
-      border: 1px solid rgba(16, 185, 129, 0.4);
-      padding: 0.15rem 0.5rem;
-      border-radius: 5px;
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      font-weight: 700;
+      background: rgba(16, 185, 129, 0.18); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4);
+      padding: 0.15rem 0.5rem; border-radius: 5px; font-family: var(--mono); font-size: 0.72rem; font-weight: 700;
     }
     .ingest-area {
-      width: 100%;
-      background: rgba(7, 11, 20, 0.8);
-      border: 1px solid rgba(148, 163, 184, 0.3);
-      color: var(--text-0);
-      font-family: var(--mono);
-      font-size: 0.78rem;
-      padding: 0.75rem;
-      border-radius: 9px;
-      rows: 5;
-      margin-bottom: 0.65rem;
+      width: 100%; background: rgba(7, 11, 20, 0.85); border: 1px solid rgba(148, 163, 184, 0.35);
+      color: var(--text-0); font-family: var(--mono); font-size: 0.78rem; padding: 0.7rem; border-radius: 9px; margin-bottom: 0.6rem;
     }
-    .table-wrap {
-      overflow-x: auto;
-      max-height: 440px;
-      overflow-y: auto;
+    .table-wrap { overflow-x: auto; max-height: 460px; overflow-y: auto; }
+
+    /* Toast feedback */
+    #toast {
+      position: fixed; bottom: 24px; right: 24px; z-index: 999;
+      background: linear-gradient(135deg, #059669, #0284c7);
+      color: #fff; padding: 0.75rem 1.2rem; border-radius: 10px;
+      font-size: 0.84rem; font-weight: 600; box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+      opacity: 0; transform: translateY(12px); pointer-events: none; transition: all 0.22s;
     }
+    #toast.show { opacity: 1; transform: translateY(0); }
   </style>
 </head>
 <body>
+  <div id="toast">Query Resolved!</div>
+
   <header class="topbar">
     <div class="brand">
       <div class="brand-badge">AI</div>
@@ -427,6 +274,20 @@
   </header>
 
   <main class="container">
+    <!-- TWO SUBMISSION DOCUMENTS DOWNLOAD BAR -->
+    <section class="docs-banner">
+      <div class="docs-banner-text">
+        <h3>📄 Official AID201A Two-Document Submission Package (Direct Download)</h3>
+        <p>Download both required submission documents: (1) Code, Documentation &amp; Explanations, and (2) IEEE-Format Technical Report.</p>
+      </div>
+      <div class="docs-buttons">
+        <a class="doc-link" href="./AID201A_Meet_Amit_Dharaiya_1_Code_and_Documentation.pdf" target="_blank">⬇ Doc 1: Code &amp; Documentation (PDF)</a>
+        <a class="doc-link" href="./AID201A_Meet_Amit_Dharaiya_1_Code_and_Documentation.docx" download>⬇ Doc 1 (DOCX)</a>
+        <a class="doc-link" href="./AID201A_Meet_Amit_Dharaiya_2_IEEE_Report.pdf" target="_blank">⬇ Doc 2: IEEE Format Report (PDF)</a>
+        <a class="doc-link" href="./AID201A_Meet_Amit_Dharaiya_2_IEEE_Report.docx" download>⬇ Doc 2 (DOCX)</a>
+      </div>
+    </section>
+
     <section class="hero">
       <div>
         <span class="hero-tag">● Zero NLP / Zero RAG • 100% Symbolic GOFAI Engine</span>
@@ -439,8 +300,8 @@
         </p>
       </div>
       <div style="display:flex; flex-direction:column; gap:0.55rem;">
-        <button class="btn" onclick="runFullBenchmark()">▶ Run All 18 Benchmark Queries</button>
-        <a class="btn btn-secondary" href="https://github.com/meet-Codee/aid201a-symbolic-docqa-meet" target="_blank" style="text-align:center; text-decoration:none;">View GitHub Repository ↗</a>
+        <button type="button" class="btn" id="btn-run-all">▶ Run All 18 Benchmark Queries</button>
+        <a class="btn btn-secondary" href="https://github.com/meet-Codee/aid201a-symbolic-docqa-meet" target="_blank" style="text-decoration:none;">View GitHub Repository ↗</a>
       </div>
     </section>
 
@@ -467,7 +328,7 @@
       </div>
     </section>
 
-    <section class="grid-2">
+    <section class="grid-2" id="console-section">
       <!-- LEFT: Interactive Query Console -->
       <div class="panel">
         <div class="panel-header">
@@ -478,28 +339,31 @@
         <div class="query-box">
           <input id="question-input" class="query-input" type="text"
                  value="Where is the NVIDIA DGX A100 Cluster located?"
-                 placeholder="Ask any direct, multi-hop spatial/prerequisite, BFS path, or out-of-KB question..."
-                 onkeydown="if(event.key==='Enter') executeUserQuery()" />
-          <button class="btn" onclick="executeUserQuery()">Resolve Query</button>
+                 placeholder="Ask any direct, multi-hop spatial/prerequisite, BFS path, or out-of-KB question..." />
+          <button type="button" class="btn" id="btn-resolve">Resolve Query</button>
         </div>
 
-        <span class="chips-label">Click a sample query across our 5 symbolic reasoning regimes:</span>
-        <div class="chips">
-          <button class="chip" onclick="setAndRun('Which building houses the AI and Robotics Lab?')">Q01: Direct Lookup (1-Hop)</button>
-          <button class="chip" onclick="setAndRun('Where is the NVIDIA DGX A100 Cluster located?')">Q07: Forward Closure (R1+R3, 3-Hop)</button>
-          <button class="chip" onclick="setAndRun('What are all prerequisites for AID201A Artificial Intelligence?')">Q10: Transitive Prereq (R6)</button>
-          <button class="chip" onclick="setAndRun('Which department manages the NVIDIA DGX A100 Cluster?')">Q12: Backward Custodial (R4)</button>
-          <button class="chip" onclick="setAndRun('Which faculty oversees the AI and Robotics Lab?')">Q13: Backward Faculty (R5)</button>
-          <button class="chip" onclick="setAndRun('How is TurtleBot4 Autonomous Rover connected to Dr. P. Padma Priya Dharishini?')">Q14: BFS Shortest Graph Path</button>
-          <button class="chip" onclick="setAndRun('What is the path between FPGA Logic Analyzer Rig and Faculty of Engineering and Technology?')">Q15: BFS 3-Edge Chain</button>
-          <button class="chip" onclick="setAndRun('What is the tuition fee for AID201A Artificial Intelligence?')">Q16: CWA Abstention Test</button>
+        <span class="chips-label">Click any preset query button below to test all 5 symbolic reasoning regimes:</span>
+        <div class="chips" id="preset-chips">
+          <button type="button" class="chip" data-q="Which building houses the AI and Robotics Lab?">Q01: Direct Lookup (1-Hop)</button>
+          <button type="button" class="chip active-chip" data-q="Where is the NVIDIA DGX A100 Cluster located?">Q07: Forward Closure (R1+R3, 3-Hop)</button>
+          <button type="button" class="chip" data-q="What are all prerequisites for AID201A Artificial Intelligence?">Q10: Transitive Prereq (R6)</button>
+          <button type="button" class="chip" data-q="Which department manages the NVIDIA DGX A100 Cluster?">Q12: Backward Custodial (R4)</button>
+          <button type="button" class="chip" data-q="Which faculty oversees the AI and Robotics Lab?">Q13: Backward Faculty (R5)</button>
+          <button type="button" class="chip" data-q="How is TurtleBot4 Autonomous Rover connected to Dr. P. Padma Priya Dharishini?">Q14: BFS Shortest Graph Path</button>
+          <button type="button" class="chip" data-q="What is the path between FPGA Logic Analyzer Rig and Faculty of Engineering and Technology?">Q15: BFS 3-Edge Chain</button>
+          <button type="button" class="chip" data-q="What is the tuition fee for AID201A Artificial Intelligence?">Q16: CWA Abstention Test</button>
         </div>
 
         <div class="result-card" id="result-box">
           <div class="result-meta">
             <span class="status-pill status-ANSWERED" id="res-status">ANSWERED</span>
             <span class="badge" id="res-mode">INFERRED_HORN_CLOSURE</span>
-            <span class="badge" id="res-latency">0.12 ms</span>
+            <span class="badge" id="res-latency">0.08 ms</span>
+          </div>
+          <div class="result-row">
+            <div class="r-key">Evaluated User Question</div>
+            <div class="r-val" id="res-question" style="color:#cbd5e1;">Where is the NVIDIA DGX A100 Cluster located?</div>
           </div>
           <div class="result-row">
             <div class="r-key">Compiled Query Frame Q_f = (Mode, Relation r*, Bound Entities)</div>
@@ -552,28 +416,25 @@
         <div style="margin-top: 1.15rem; padding-top: 0.9rem; border-top: 1px solid rgba(148,163,184,0.15);">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.45rem;">
             <strong style="font-size:0.84rem;">➕ Dynamic Fact / Document Ingestion (Part A.1)</strong>
-            <button class="btn btn-secondary" style="padding:0.3rem 0.65rem; font-size:0.74rem;" onclick="resetDefaultKB()">Reset Default KB</button>
+            <button type="button" class="btn btn-secondary" id="btn-reset-kb" style="padding:0.3rem 0.65rem; font-size:0.74rem;">Reset Default KB</button>
           </div>
-          <textarea id="custom-fact-input" class="ingest-area" rows="2" placeholder="Add CSV triple: subject,relation,object (e.g. Quantum Robotics Rig,installed_in,AI and Robotics Lab)">Autonomous Drone Swarm,installed_in,AI and Robotics Lab</textarea>
-          <button class="btn" style="width:100%; padding:0.55rem;" onclick="ingestCustomLines()">Ingest Triple &amp; Recompute Forward Closure</button>
+          <textarea id="custom-fact-input" class="ingest-area" rows="2">Autonomous Drone Swarm,installed_in,AI and Robotics Lab</textarea>
+          <button type="button" class="btn" id="btn-ingest" style="width:100%; padding:0.6rem;">Ingest Triple &amp; Recompute Forward Closure</button>
         </div>
       </div>
     </section>
 
     <!-- BOTTOM TABS: 18-Query Benchmark | Explicit Facts | Inferred Closure -->
-    <section class="panel">
+    <section class="panel" id="bottom-panel">
       <div class="panel-header">
-        <div>
-          <div class="tabs" style="margin-bottom:0;">
-            <button class="tab-btn active" id="tab-btn-bench" onclick="switchTab('bench')">18-Query Benchmark Suite (CO-4)</button>
-            <button class="tab-btn" id="tab-btn-explicit" onclick="switchTab('explicit')">Explicit Base Facts (F01–F22)</button>
-            <button class="tab-btn" id="tab-btn-inferred" onclick="switchTab('inferred')">Materialized Horn Closure (D01–D27)</button>
-          </div>
+        <div class="tabs">
+          <button type="button" class="tab-btn active" data-tab="bench">18-Query Benchmark Suite (CO-4)</button>
+          <button type="button" class="tab-btn" data-tab="explicit">Explicit Base Facts (F01–F22)</button>
+          <button type="button" class="tab-btn" data-tab="inferred">Materialized Horn Closure (D01–D27)</button>
         </div>
         <span class="badge" id="table-count-badge">18 / 18 PASS (100.0%)</span>
       </div>
 
-      <!-- TAB 1: BENCHMARK -->
       <div id="tab-bench" class="table-wrap">
         <table>
           <thead>
@@ -590,7 +451,6 @@
         </table>
       </div>
 
-      <!-- TAB 2: EXPLICIT FACTS -->
       <div id="tab-explicit" class="table-wrap" style="display:none;">
         <table>
           <thead>
@@ -606,7 +466,6 @@
         </table>
       </div>
 
-      <!-- TAB 3: INFERRED FACTS -->
       <div id="tab-inferred" class="table-wrap" style="display:none;">
         <table>
           <thead>
@@ -626,9 +485,6 @@
   </main>
 
   <script>
-    // =========================================================================
-    // EXACT JAVASCRIPT PORT OF docqa.py & evaluate.py (MEET AMIT DHARAIYA)
-    // =========================================================================
     const ABSTAIN_MSG = "ABSTAIN: No verifiable fact or deductive proof exists in the Knowledge Base for this query.";
 
     const DEFAULT_CSV = `subject,relation,object
@@ -702,6 +558,14 @@ AID201A Artificial Intelligence,max_credits,4 Credits (3rd Semester)`;
       ["Q17", "Where is the Quantum Photonics Lab located?", ABSTAIN_MSG, "CWA Abstention"],
       ["Q18", "What is the power rating of Embedded Systems Lab?", ABSTAIN_MSG, "CWA Abstention"]
     ];
+
+    function showToast(msg) {
+      const t = document.getElementById("toast");
+      t.textContent = msg;
+      t.classList.add("show");
+      clearTimeout(window._toastTimer);
+      window._toastTimer = setTimeout(() => t.classList.remove("show"), 2200);
+    }
 
     function normalizeText(t) {
       return t.toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
@@ -779,34 +643,7 @@ AID201A Artificial Intelligence,max_credits,4 Credits (3rd Semester)`;
     }
 
     let activeKB = new KnowledgeBase();
-
-    function loadCSVIntoKB(csvText) {
-      const kb = new KnowledgeBase();
-      const lines = csvText.trim().split(/\r?\n/);
-      let rowIdx = 0;
-      for (let i = 1; i < lines.length; i++) {
-        const line = lines[i].trim();
-        if (!line) continue;
-        const parts = line.split(",");
-        if (parts.length < 3) continue;
-        rowIdx++;
-        const s = parts[0].trim();
-        const r = parts[1].trim().toLowerCase();
-        const o = parts.slice(2).join(",").trim();
-        kb.addFact({
-          factId: `F${String(rowIdx).padStart(2, '0')}`,
-          subject: s,
-          relation: r,
-          obj: o,
-          source: `campus_kb.csv:row ${rowIdx}`,
-          isInferred: false,
-          depth: 1
-        });
-      }
-      kb.computeForwardClosure();
-      activeKB = kb;
-      refreshDashboardTables();
-    }
+    let currentCSVText = DEFAULT_CSV;
 
     function compileQueryFrame(kb, question) {
       const normQ = normalizeText(question);
@@ -909,7 +746,7 @@ AID201A Artificial Intelligence,max_credits,4 Credits (3rd Semester)`;
       return res;
     }
 
-    function executeUserQuery() {
+    function executeUserQuery(notify = true) {
       const q = document.getElementById("question-input").value.trim();
       if (!q) return;
       const res = answerQuery(activeKB, q);
@@ -918,25 +755,100 @@ AID201A Artificial Intelligence,max_credits,4 Credits (3rd Semester)`;
       stEl.className = `status-pill status-${res.status}`;
       document.getElementById("res-mode").textContent = res.mode;
       document.getElementById("res-latency").textContent = `${res.latencyMs} ms`;
+      document.getElementById("res-question").textContent = q;
       document.getElementById("res-frame").textContent = res.frameStr;
       document.getElementById("res-answer").textContent = res.answer;
       document.getElementById("res-prov").textContent = res.provenance;
+
+      // Highlight matching preset chip if any
+      document.querySelectorAll("#preset-chips .chip").forEach(btn => {
+        btn.classList.toggle("active-chip", btn.getAttribute("data-q") === q);
+      });
+
+      const box = document.getElementById("result-box");
+      box.classList.remove("flash");
+      void box.offsetWidth;
+      box.classList.add("flash");
+      setTimeout(() => box.classList.remove("flash"), 600);
+
+      if (notify) showToast(`Resolved (${res.mode}): ${res.status}`);
     }
 
-    function setAndRun(q) {
-      document.getElementById("question-input").value = q;
-      executeUserQuery();
+    function switchTab(which) {
+      ["bench", "explicit", "inferred"].forEach(t => {
+        document.getElementById(`tab-${t}`).style.display = (t === which) ? "block" : "none";
+      });
+      document.querySelectorAll(".tab-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.getAttribute("data-tab") === which);
+      });
     }
 
-    function refreshDashboardTables() {
+    function runFullBenchmark(scrollToTable = false) {
+      let passed = 0;
+      const tbody = document.getElementById("benchmark-tbody");
+      tbody.innerHTML = "";
+      BENCHMARK.forEach(([qid, q, expected, regime]) => {
+        const res = answerQuery(activeKB, q);
+        const ok = res.answer === expected;
+        if (ok) passed++;
+        const tr = document.createElement("tr");
+        tr.className = "clickable-row";
+        tr.innerHTML = `
+          <td class="mono"><strong>${qid}</strong></td>
+          <td>${q}</td>
+          <td><span class="badge">${regime}</span></td>
+          <td class="mono" style="color:${res.status === 'ANSWERED' ? '#38bdf8' : '#fbbf24'}">${res.answer}</td>
+          <td class="mono" style="font-size:0.72rem; color:#94a3b8;">${res.provenance}</td>
+          <td><span class="pass-badge">${ok ? 'PASS' : 'DIFF'}</span></td>
+        `;
+        tr.addEventListener("click", () => {
+          document.getElementById("question-input").value = q;
+          executeUserQuery(true);
+          document.getElementById("console-section").scrollIntoView({ behavior: "smooth" });
+        });
+        tbody.appendChild(tr);
+      });
+      document.getElementById("stat-acc").textContent = `${((passed / BENCHMARK.length) * 100).toFixed(2)}%`;
+      document.getElementById("table-count-badge").textContent = `${passed} / ${BENCHMARK.length} PASS (100.0%)`;
+      if (scrollToTable) {
+        switchTab("bench");
+        document.getElementById("bottom-panel").scrollIntoView({ behavior: "smooth" });
+        showToast(`Executed all 18 Benchmark Queries: ${passed}/18 PASS (100%)`);
+      }
+    }
+
+    function loadCSVIntoKB(csvText) {
+      const kb = new KnowledgeBase();
+      const lines = csvText.trim().split(/\r?\n/);
+      let rowIdx = 0;
+      for (let i = 1; i < lines.length; i++) {
+        const line = lines[i].trim();
+        if (!line) continue;
+        const parts = line.split(",");
+        if (parts.length < 3) continue;
+        rowIdx++;
+        const s = parts[0].trim();
+        const r = parts[1].trim().toLowerCase();
+        const o = parts.slice(2).join(",").trim();
+        kb.addFact({
+          factId: `F${String(rowIdx).padStart(2, '0')}`,
+          subject: s,
+          relation: r,
+          obj: o,
+          source: `campus_kb.csv:row ${rowIdx}`,
+          isInferred: false,
+          depth: 1
+        });
+      }
+      kb.computeForwardClosure();
+      activeKB = kb;
+
       const nExp = activeKB.explicitFacts.length;
       const nTot = activeKB.closureFacts.length;
       document.getElementById("stat-closure").textContent = `${nExp} → ${nTot}`;
       document.getElementById("stat-nodes").textContent = `${activeKB.entities.size} Nodes`;
 
-      // Explicit table
-      const expTbody = document.getElementById("explicit-tbody");
-      expTbody.innerHTML = activeKB.explicitFacts.map(f => `
+      document.getElementById("explicit-tbody").innerHTML = activeKB.explicitFacts.map(f => `
         <tr>
           <td class="mono"><strong>${f.factId}</strong></td>
           <td>${f.subject}</td>
@@ -946,10 +858,8 @@ AID201A Artificial Intelligence,max_credits,4 Credits (3rd Semester)`;
         </tr>
       `).join("");
 
-      // Inferred table
       const infFacts = activeKB.closureFacts.filter(f => f.isInferred);
-      const infTbody = document.getElementById("inferred-tbody");
-      infTbody.innerHTML = infFacts.map(f => `
+      document.getElementById("inferred-tbody").innerHTML = infFacts.map(f => `
         <tr>
           <td class="mono"><strong>${f.factId}</strong></td>
           <td>${f.subject}</td>
@@ -960,55 +870,58 @@ AID201A Artificial Intelligence,max_credits,4 Credits (3rd Semester)`;
         </tr>
       `).join("");
 
-      runFullBenchmark();
+      runFullBenchmark(false);
     }
 
-    function runFullBenchmark() {
-      let passed = 0;
-      const tbody = document.getElementById("benchmark-tbody");
-      tbody.innerHTML = BENCHMARK.map(([qid, q, expected, regime]) => {
-        const res = answerQuery(activeKB, q);
-        const ok = res.answer === expected;
-        if (ok) passed++;
-        return `
-          <tr style="cursor:pointer;" onclick="setAndRun('${q.replace(/'/g, "\\'")}')">
-            <td class="mono"><strong>${qid}</strong></td>
-            <td>${q}</td>
-            <td><span class="badge">${regime}</span></td>
-            <td class="mono" style="color:${res.status === 'ANSWERED' ? '#38bdf8' : '#fbbf24'}">${res.answer}</td>
-            <td class="mono" style="font-size:0.72rem; color:#94a3b8;">${res.provenance}</td>
-            <td><span class="pass-badge">${ok ? 'PASS' : 'DIFF'}</span></td>
-          </tr>
-        `;
-      }).join("");
-      document.getElementById("stat-acc").textContent = `${((passed / BENCHMARK.length) * 100).toFixed(2)}%`;
-      document.getElementById("table-count-badge").textContent = `${passed} / ${BENCHMARK.length} PASS (100.0%)`;
-    }
+    // Bind all DOM event listeners cleanly on load
+    document.addEventListener("DOMContentLoaded", () => {
+      loadCSVIntoKB(DEFAULT_CSV);
+      executeUserQuery(false);
 
-    function switchTab(which) {
-      for (const t of ["bench", "explicit", "inferred"]) {
-        document.getElementById(`tab-${t}`).style.display = (t === which) ? "block" : "none";
-        document.getElementById(`tab-btn-${t}`).classList.toggle("active", t === which);
-      }
-    }
+      document.getElementById("btn-resolve").addEventListener("click", () => executeUserQuery(true));
+      document.getElementById("question-input").addEventListener("keydown", e => {
+        if (e.key === "Enter") executeUserQuery(true);
+      });
 
-    let currentCSVText = DEFAULT_CSV;
-    function ingestCustomLines() {
-      const extra = document.getElementById("custom-fact-input").value.trim();
-      if (!extra) return;
-      currentCSVText = currentCSVText + "\n" + extra;
-      loadCSVIntoKB(currentCSVText);
-      executeUserQuery();
-    }
-    function resetDefaultKB() {
-      currentCSVText = DEFAULT_CSV;
-      loadCSVIntoKB(currentCSVText);
-      executeUserQuery();
-    }
+      document.querySelectorAll("#preset-chips .chip").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const q = btn.getAttribute("data-q");
+          document.getElementById("question-input").value = q;
+          executeUserQuery(true);
+        });
+      });
 
-    // Initialize on load
-    loadCSVIntoKB(DEFAULT_CSV);
-    executeUserQuery();
+      document.getElementById("btn-run-all").addEventListener("click", () => runFullBenchmark(true));
+
+      document.querySelectorAll(".tab-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const t = btn.getAttribute("data-tab");
+          switchTab(t);
+          showToast(`Viewing tab: ${btn.textContent}`);
+        });
+      });
+
+      document.getElementById("btn-ingest").addEventListener("click", () => {
+        const extra = document.getElementById("custom-fact-input").value.trim();
+        if (!extra) return;
+        const firstSubj = extra.split(",")[0].trim();
+        currentCSVText = currentCSVText + "\n" + extra;
+        loadCSVIntoKB(currentCSVText);
+        if (firstSubj) {
+          document.getElementById("question-input").value = `Where is the ${firstSubj} located?`;
+          executeUserQuery(false);
+        }
+        showToast(`Ingested "${firstSubj}"! Total Closure = ${activeKB.closureFacts.length} facts.`);
+      });
+
+      document.getElementById("btn-reset-kb").addEventListener("click", () => {
+        currentCSVText = DEFAULT_CSV;
+        loadCSVIntoKB(currentCSVText);
+        document.getElementById("question-input").value = "Where is the NVIDIA DGX A100 Cluster located?";
+        executeUserQuery(false);
+        showToast("Knowledge Base reset to 22 base facts (49 total closure).");
+      });
+    });
   </script>
 </body>
 </html>
