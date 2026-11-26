@@ -1,0 +1,23 @@
+subject,relation,object
+AI and Robotics Lab,housed_in,Tech Park Block B
+High Performance Computing Lab,housed_in,Tech Park Block B
+Embedded Systems Lab,housed_in,Engineering Annexe
+Tech Park Block B,located_in,Peenya Campus
+Engineering Annexe,located_in,Peenya Campus
+Peenya Campus,located_in,Bengaluru North
+NVIDIA DGX A100 Cluster,installed_in,High Performance Computing Lab
+TurtleBot4 Autonomous Rover,installed_in,AI and Robotics Lab
+FPGA Logic Analyzer Rig,installed_in,Embedded Systems Lab
+AI and Robotics Lab,managed_by,Department of CSE
+High Performance Computing Lab,managed_by,Department of CSE
+Embedded Systems Lab,managed_by,Department of ECE
+Department of CSE,part_of_faculty,Faculty of Engineering and Technology
+Department of ECE,part_of_faculty,Faculty of Engineering and Technology
+AID201A Artificial Intelligence,offered_by,Department of CSE
+AID201A Artificial Intelligence,led_by,Dr. P. Padma Priya Dharishini
+AID201A Artificial Intelligence,requires_prereq,CSD102A Data Structures
+CSD102A Data Structures,requires_prereq,CSD101A Python Programming
+AID201A Artificial Intelligence,uses_facility,AI and Robotics Lab
+AI and Robotics Lab,has_capacity,60 Workstations
+High Performance Computing Lab,power_rating,45 kVA Redundant UPS
+AID201A Artificial Intelligence,max_credits,4 Credits (3rd Semester)
